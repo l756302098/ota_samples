@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 # Set the project name
 project (ota_samples)
 
-SET(CMAKE_INSTALL_PREFIX /root/workspaces)
+SET(CMAKE_INSTALL_PREFIX /home/li/workspaces)
 
 #准备的版本设置
 SET(MAJOR_VERSION 1)

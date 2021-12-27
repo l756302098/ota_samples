@@ -12,7 +12,7 @@ log_with_time() {
 }
 
 do_start() {
-    cd /root/workspaces/bin/
+    cd /home/li/workspaces/bin/
     nohup ./ota_samples > /dev/null 2>&1 &
 }
 
