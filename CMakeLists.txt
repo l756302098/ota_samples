@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.5)
 # Set the project name
 project (ota_samples)
 
+SET(CMAKE_INSTALL_PREFIX /root/workspaces)
+
 #准备的版本设置
 SET(MAJOR_VERSION 1)
 SET(MINOR_VERSION 0)
@@ -25,9 +27,9 @@ set(CPACK_DEBIAN_PACKAGE_NAME "ota_samples")
 #设置架构
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 #设置依赖
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "yaml-cpp (>= 0.6.2)")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libyaml-cpp (>= 0.6.2)")
 #设置依赖
-SET(CPACK_DEBIAN_PACKAGE_DEPENDS "glog")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libgoogle-glog-dev")
 #设置description
 SET(CPACK_PACKAGE_DESCRIPTION "ota test")
 
@@ -36,7 +38,6 @@ SET(CPACK_PACKAGE_CONTACT "support@pro.com")
 
 #设置维护人
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "lyl")
-include(CPack)
 
 find_package(Boost REQUIRED COMPONENTS filesystem system)
 
@@ -62,3 +63,7 @@ target_link_libraries(yaml_samples
 ${Boost_LIBRARIES}
 yaml-cpp
 glog)
+
+install(TARGETS yaml_samples DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+install(DIRECTORY scripts DESTINATION ${CMAKE_INSTALL_PREFIX})
+include(CPack)
