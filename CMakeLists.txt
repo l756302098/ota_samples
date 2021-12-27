@@ -57,13 +57,13 @@ else()
 endif()
 
 include_directories(${Boost_INCLUDE_DIRS})
-add_executable(yaml_samples main.cpp)
+add_executable(ota_samples main.cpp)
 
-target_link_libraries(yaml_samples
+target_link_libraries(ota_samples
 ${Boost_LIBRARIES}
 yaml-cpp
 glog)
 
-install(TARGETS yaml_samples DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+install(TARGETS ota_samples DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(DIRECTORY scripts DESTINATION ${CMAKE_INSTALL_PREFIX})
 include(CPack)

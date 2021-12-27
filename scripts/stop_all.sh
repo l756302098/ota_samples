@@ -14,12 +14,8 @@ do
     kill -9 ${id}
 done
 
-#stop client
+#stop samples
 cd $SCRIPTS_DIR
-./start_client.sh stop
-
-#stop around_18r
-cd $SCRIPTS_DIR
-./start_around_18r.sh stop
+./start_samples.sh stop
 
 exit 0

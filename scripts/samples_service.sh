@@ -9,7 +9,7 @@ if [ $start_all_id -ne 0 ];then
 fi
 
 # 启动 ./start_all.sh
-cd /root/workspace/SmallWashingRobotSDK/ota/start/
+cd /root/workspaces/scripts/
 nohup ./start_all.sh > /dev/null 2>&1 &
 
 exit 0

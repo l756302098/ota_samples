@@ -12,14 +12,12 @@ log_with_time() {
 }
 
 do_start() {
-    export QT_QPA_PLATFORM=wayland
-    export XDG_RUNTIME_DIR=/tmp/.xdg
-    cd /root/workspace/client/
-    nohup ./client > /dev/null 2>&1 &
+    cd /root/workspaces/bin/
+    nohup ./ota_samples > /dev/null 2>&1 &
 }
 
 do_stop() {
-    kill $(pgrep -ax client) >>$result_log 2>&1
+    kill $(pgrep -ax ota_samples) >>$result_log 2>&1
 }
 
 log_with_time "[BEGIN] $0 $*."
@@ -42,4 +40,3 @@ esac
 
 log_with_time "[END] $0 $*."
 exit 0
-
