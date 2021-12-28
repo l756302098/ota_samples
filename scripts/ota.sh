@@ -20,9 +20,26 @@ else
     exit 0;
 fi
 #uninstall
-
+if [ -d "/home/li/workspaces/" ];then
+  echo "/home/li/workspaces/ exist"
+  rm -rf /home/li/workspaces/bin
+  rm -rf /home/li/workspaces/scripts
+else
+  echo "文件夹不存在"
+fi
 #install
 sudo dpkg -i $EXE_NAME
+if [[ "$?" -eq 0 ]] ; then
+    echo "install deb successful." >> /tmp/$BASE_NAME.log
+    echo -e "\033[32m install deb succeful!  \033[0m"
+else
+    echo "install deb failed. " >> /tmp/$BASE_NAME.log
+    echo -e "\033[31m install deb failed! \033[0m"
+    exit 0;
+fi
+#set init.d
+cd /home/li/workspaces/scripts
+sudo ./install.sh
 if [[ "$?" -eq 0 ]] ; then
     echo "install successful." >> /tmp/$BASE_NAME.log
     echo -e "\033[32m install succeful!  \033[0m"
@@ -31,6 +48,3 @@ else
     echo -e "\033[31m install failed! \033[0m"
     exit 0;
 fi
-#set init.d
-
-
