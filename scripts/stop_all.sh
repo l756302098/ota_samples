@@ -8,7 +8,7 @@ SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 START_ALL_NAME=start_all.sh
 
 #stop all
-start_all_id=`pgrep -ax ${START_ALL_NAME} | awk '{print $1}'`
+start_all_id=`pgrep -l ${START_ALL_NAME} | awk '{print $1}'`
 for id in $start_all_id
 do
     kill -9 ${id}

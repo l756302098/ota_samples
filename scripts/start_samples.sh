@@ -17,7 +17,7 @@ do_start() {
 }
 
 do_stop() {
-    kill $(pgrep -ax ota_samples) >>$result_log 2>&1
+    kill $(pgrep -l ota_samples) >>$result_log 2>&1
 }
 
 log_with_time "[BEGIN] $0 $*."

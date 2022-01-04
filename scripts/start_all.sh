@@ -11,7 +11,7 @@ cd $SCRIPTS_DIR
 while true
 do
     #检测
-    ota_samples_id=`pgrep -ax ${EXE_NAME} | wc -l`
+    ota_samples_id=`pgrep -l ${EXE_NAME} | wc -l`
     if [ $ota_samples_id -eq 0 ];then
         nohup ./start_samples.sh start > /dev/null 2>&1 &
     fi
