@@ -4,7 +4,7 @@ ota samples
 # cpack
 mkdir build && cd build  
 cmake ..  
-pack package  
+make package  
 
 ## daemons
 
